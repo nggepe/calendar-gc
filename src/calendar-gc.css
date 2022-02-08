@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.gc-calendar {
+  font-family: 'Inter', sans-serif;
+}
+
+.gc-calendar .gc-calendar-header {
+  background-color: #fff;
+  padding: 2px;
+}
+
+.gc-calendar .gc-calendar-header .gc-calendar-month-year {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 136.02%;
+}
+
+.gc-calendar table.calendar {
+  width: 100%;
+}

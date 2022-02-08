@@ -1,0 +1,23 @@
+{
+  "name": "calendar-gc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minify-all": "node minify.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nggepe/calendar-gc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nggepe/calendar-gc/issues"
+  },
+  "homepage": "https://github.com/nggepe/calendar-gc#readme",
+  "dependencies": {
+    "minify": "^8.0.3"
+  }
+}

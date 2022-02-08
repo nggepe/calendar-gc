@@ -23,14 +23,16 @@ var gcObject = {
   render() {
     const elem = $(this.el);
     elem.html("")
-    const head = $(`<div>
-      
-      </div>`);
-    head.appendTo(elem)
+    const gcCalendar = $(`<div class="gc-calendar"></div>`);
+    elem.append(gcCalendar)
+    const head = $(`<div class="gc-calendar-header"></div>`);
+    head.appendTo(gcCalendar)
+    const montYear = $(`<span class="gc-calendar-month-year"></span>`);
+    montYear.appendTo(head)
     const pickedMonth = $(`<span class='month'>${this.options.monthNames[this.pickedDate.getMonth()]}</span>`)
-    pickedMonth.appendTo(head)
-    const pickedYear = $(`<span class='year'>${this.pickedDate.getFullYear()}</span>`)
-    pickedYear.appendTo(head)
+    pickedMonth.appendTo(montYear)
+    const pickedYear = $(`<span class='year'> ${this.pickedDate.getFullYear()}</span>`)
+    pickedYear.appendTo(montYear)
     const prev = $(`<button type="button" class='prev'>&lt;</button>`)
     prev.appendTo(head)
     prev.on("click", function (e) {
@@ -44,7 +46,7 @@ var gcObject = {
     })
 
     const calendar = $('<table class="calendar"></table>')
-    calendar.appendTo(elem)
+    calendar.appendTo(gcCalendar)
     const header = $('<thead></thead>');
     header.appendTo(calendar);
     const headerRow = $('<tr></tr>');
