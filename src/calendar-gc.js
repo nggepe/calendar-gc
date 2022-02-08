@@ -5,46 +5,62 @@ var gcObject = {
     monthNames: [],
     onPrevMonth: function (e) { },
     onNextMonth: function (e) { },
-    events: [{ date: null, eventName: null, className: null, onclick: function (ev, data) { } }],
-    onclickDate: function (ev, data) { }
+    events: [{ date: null, eventName: null, className: null, onclick: function (ev, data) { }, dateColor: "#000" }],
+    onclickDate: function (ev, data) { },
+    nextIcon: '&gt;',
+    prevIcon: '&lt;',
   },
   el: "",
+  eventAnimate: "none",
   pickedDate: new Date(),
   prevMonth() {
     this.pickedDate = new Date(this.pickedDate.getFullYear(), this.pickedDate.getMonth() - 2, 1);
     this.options.onPrevMonth(this.pickedDate);
+    this.eventAnimate = "prev";
     this.render();
   },
   nextMonth() {
     this.pickedDate = new Date(this.pickedDate.getFullYear(), this.pickedDate.getMonth(), 1);
     this.options.onNextMonth(this.pickedDate);
+    this.eventAnimate = "next";
     this.render();
   },
   render() {
     const elem = $(this.el);
     elem.html("")
-    const head = $(`<div>
-      
-      </div>`);
-    head.appendTo(elem)
+    const gcCalendar = $(`<div class="gc-calendar"></div>`);
+    elem.append(gcCalendar)
+    const head = $(`<div class="gc-calendar-header"></div>`);
+    head.appendTo(gcCalendar)
+    const montYear = $(`<span class="gc-calendar-month-year"></span>`);
+    montYear.appendTo(head)
     const pickedMonth = $(`<span class='month'>${this.options.monthNames[this.pickedDate.getMonth()]}</span>`)
-    pickedMonth.appendTo(head)
-    const pickedYear = $(`<span class='year'>${this.pickedDate.getFullYear()}</span>`)
-    pickedYear.appendTo(head)
-    const prev = $(`<button type="button" class='prev'>&lt;</button>`)
+    pickedMonth.appendTo(montYear)
+    const pickedYear = $(`<span class='year'> ${this.pickedDate.getFullYear()}</span>`)
+    pickedYear.appendTo(montYear)
+    const prev = $(`<button type="button" class='prev'>${this.options.prevIcon}</button>`)
     prev.appendTo(head)
     prev.on("click", function (e) {
       gcObject.prevMonth()
     })
 
-    const next = $(`<button type="button" class='next'>&gt;</button>`)
+    const next = $(`<button type="button" class='next'>${this.options.nextIcon}</button>`)
     next.appendTo(head)
     next.on("click", function (e) {
       gcObject.nextMonth()
     })
 
     const calendar = $('<table class="calendar"></table>')
-    calendar.appendTo(elem)
+    calendar.removeClass("slide-in-left slide-in-right slide-out-left slide-out-right")
+    /// ANIMATION
+    if (this.eventAnimate == "none") {
+      calendar.hide().addClass("slide-in-left").show()
+    } else if (this.eventAnimate == "prev") {
+      calendar.hide().addClass("slide-out-right").show().delay(200).hide().removeClass("slide-out-right").addClass("slide-in-left").show()
+    } else {
+      calendar.hide().addClass("slide-out-left").show().delay(200).hide().removeClass("slide-out-left").addClass("slide-in-right").show()
+    }
+    calendar.appendTo(gcCalendar)
     const header = $('<thead></thead>');
     header.appendTo(calendar);
     const headerRow = $('<tr></tr>');
@@ -74,23 +90,28 @@ var gcObject = {
         btnCell.click(function (ev) {
           gcObject.options.onclickDate(ev, e)
         })
-        var day = $('<span class="day-number">' + e.date + '</span>');
+        var day = $(`<span class="day-number">${e.date}</span>`);
         cell.addClass(e.class)
         day.appendTo(btnCell);
 
         if (stackDate.getFullYear() == e.datejs.getFullYear() && stackDate.getMonth() == e.datejs.getMonth() && stackDate.getDate() == e.datejs.getDate()) {
           btnCell.addClass("today")
         }
+
+        var dayStyle = ""
         gcObject.options.events.forEach(function (evt) {
           if (evt.date.getFullYear() == e.datejs.getFullYear() && evt.date.getMonth() == e.datejs.getMonth() && evt.date.getDate() == e.datejs.getDate()) {
             cell.addClass("event")
             var event = $(`<div class="gc-event ${evt.className}">${evt.eventName}</div>`)
+            dayStyle = "color:" + evt.dateColor
             event.on("click", function (e) {
               evt.onclick(e, evt)
             })
             cell.append(event)
           }
         })
+
+        day.attr("style", dayStyle)
 
       })
       row.appendTo(body);
@@ -161,7 +182,9 @@ var gcObject = {
     onPrevMonth,
     onNextMonth,
     events,
-    onclickDate
+    onclickDate,
+    nextIcon: '&gt;',
+    prevIcon: '&lt;',
   }) {
     gcObject.options.dayNames = options.dayNames || ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     gcObject.options.dayBegin = typeof options.dayBegin === "undefined" || options.dayBegin === null ? 1 : options.dayBegin
@@ -173,8 +196,11 @@ var gcObject = {
       eventName: null,
       className: null,
       onclick: function (ev, data) { },
+      dateColor: "#000"
     }]
     gcObject.options.onclickDate = options.onclickDate || function (e, data) { }
+    gcObject.options.nextIcon = options.nextIcon || '&gt;'
+    gcObject.options.prevIcon = options.prevIcon || '&lt;'
 
     gcObject.el = this
     gcObject.render()

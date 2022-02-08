@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.gc-calendar {
+  font-family: 'Inter', sans-serif;
+}
+
+.gc-calendar .gc-calendar-header {
+  background-color: #fff;
+  padding: 2px;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.gc-calendar .gc-calendar-header button.prev, .gc-calendar .gc-calendar-header button.next {
+  height: 36px;
+  /* width: 24px; */
+  left: 0px;
+  top: 0px;
+  border-radius: 100px;
+  background: #FFFFFF;
+  border-radius: 100px;
+  position: relative;
+  display: inline-block;
+  border: 0;
+  padding: 10px 15px;
+  font-size: 18px;
+  box-shadow: inset 0px -1px 0px #EDF2F7;
+  cursor: pointer;
+  color: #7A7A9D;
+  font-weight: bold;
+}
+
+.gc-calendar .gc-calendar-header button.prev {
+  margin-left: 20px;
+}
+
+.gc-calendar .gc-calendar-header .gc-calendar-month-year {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  color: #000000;
+  line-height: 136.02%;
+  min-width: 220px;
+}
+
+.gc-calendar table.calendar {
+  width: 100%;
+}
+
+.gc-calendar table.calendar th {
+  text-align: start;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 136.02%;
+  padding: 2px;
+  text-transform: uppercase;
+  color: #7A7A9D;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.gc-calendar table.calendar td {
+  height: 165px;
+  position: relative;
+  padding-top: 3px;
+  vertical-align: top;
+}
+
+.gc-calendar table.calendar td.prev-month, .gc-calendar table.calendar td.next-month {
+  color: #B5B5BD
+}
+
+.gc-calendar table.calendar td .day-number {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 38.09px;
+  overflow-y: auto;
+}
+
+.gc-calendar table.calendar th::before, .gc-calendar table.calendar tr:not(:last-child) td::before {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #27272E;
+  bottom: 0px;
+  position: absolute;
+}
+
+.slide-in-left {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.slide-in-right {
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.slide-out-left {
+  -webkit-animation: slide-out-left 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: slide-out-left 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.slide-out-right {
+  -webkit-animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
