@@ -12,6 +12,7 @@ const options = {
 
 async function init() {
   writeMinify('./src/calendar-gc.js', './dist/calendar-gc.min.js');
+  writeMinify('./src/calendar-gc.css', './dist/calendar-gc.min.css');
 }
 
 async function writeMinify(path, minifypath) {
