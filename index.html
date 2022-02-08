@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="calendar"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./src/gepcode-calendar.js"></script>
+<script>
+  $(function (e) {
+    $("#calendar").calendarGC({
+      dayNames: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
+      dayBegin: 1,
+      monthNames: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+      onPrevMonth: function (e) {
+        console.log("prev");
+        console.log(e)
+      },
+      onNextMonth: function (e) {
+        console.log("next");
+        console.log(e)
+      },
+      events: [
+        {
+          date: new Date("2022-02-07"),
+          eventName: "Event 1",
+          className: "event-1",
+          onclick(e, data) {
+            console.log(data);
+          }
+        },
+        {
+          date: new Date("2022-02-08"),
+          eventName: "Event 2",
+          className: "event-2",
+          onclick(e, data) {
+            console.log(data);
+          }
+        }
+      ],
+      onclickDate: function (e, data) {
+        console.log(e, data);
+      }
+    });
+  })
+</script>
+
+</html>
