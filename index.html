@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./src/calendar-gc.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./dist/calendar-gc.min.css">
   <style>
     html,
     body {
@@ -25,9 +27,7 @@
 <script>
   $(function (e) {
     var calendar = $("#calendar").calendarGC({
-      dayNames: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
-      dayBegin: 1,
-      monthNames: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+      dayBegin: 0,
       prevIcon: '&#x3c;',
       nextIcon: '&#x3e;',
       onPrevMonth: function (e) {
@@ -41,8 +41,17 @@
       events: [
         {
           date: new Date("2022-02-07"),
-          eventName: "Event 1",
-          className: "event-1",
+          eventName: "Holiday",
+          className: "badge bg-danger",
+          onclick(e, data) {
+            console.log(data);
+          },
+          dateColor: "red"
+        },
+        {
+          date: new Date("2022-02-07"),
+          eventName: "Holiday with wife",
+          className: "badge bg-danger",
           onclick(e, data) {
             console.log(data);
           },
@@ -50,11 +59,12 @@
         },
         {
           date: new Date("2022-02-08"),
-          eventName: "Event 2",
-          className: "event-2",
+          eventName: "Working day",
+          className: "badge bg-success",
           onclick(e, data) {
             console.log(data);
-          }
+          },
+          dateColor: "green"
         }
       ],
       onclickDate: function (e, data) {

@@ -103,7 +103,7 @@ var gcObject = {
           if (evt.date.getFullYear() == e.datejs.getFullYear() && evt.date.getMonth() == e.datejs.getMonth() && evt.date.getDate() == e.datejs.getDate()) {
             cell.addClass("event")
             var event = $(`<div class="gc-event ${evt.className}">${evt.eventName}</div>`)
-            dayStyle = "color:" + evt.dateColor
+            dayStyle = "color:" + (evt.dateColor || "inherit")
             event.on("click", function (e) {
               evt.onclick(e, evt)
             })
