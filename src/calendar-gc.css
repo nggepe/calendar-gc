@@ -96,6 +96,10 @@
   display: block;
 }
 
+.gc-calendar table.calendar td .today .day-number {
+  color: #4C6FFF;
+}
+
 .gc-calendar table.calendar a {
   text-decoration: none;
   display: block;
@@ -105,7 +109,7 @@
   background-color: #4C6FFF;
   width: 90%;
   border-radius: 5px;
-  padding-left: 1rem;
+  padding-left: 10px;
   transition: .2s;
 }
 
@@ -121,7 +125,15 @@
   border-radius: 1px;
   background-color: #8f8f93;
   bottom: 0px;
+  left: 0;
   position: absolute;
+}
+
+.gc-calendar table.calendar td:hover {
+  background: linear-gradient(90deg, #E1E8FF 90%, transparent 50%);
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 0.3s;
 }
 
 .gc-calendar .gc-event {
@@ -129,6 +141,8 @@
   width: max-content;
   margin-bottom: 10px;
 }
+
+
 
 .slide-in-left {
   -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
