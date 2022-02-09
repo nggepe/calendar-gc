@@ -37,6 +37,12 @@
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08), 0px 7px 14px rgba(50, 50, 93, 0.1);
 }
 
+.gc-calendar .gc-calendar-header button.prev:focus, .gc-calendar .gc-calendar-header button.next:focus {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08), 0px 7px 14px rgba(50, 50, 93, 0.1);
+  outline: none;
+  border: 0;
+}
+
 .gc-calendar .gc-calendar-header button.prev {
   margin-left: 20px;
 }
@@ -91,6 +97,18 @@
 .gc-calendar table.calendar a {
   text-decoration: none;
   display: block;
+}
+
+.gc-calendar table.calendar a:hover {
+  background-color: #4C6FFF;
+  width: 90%;
+  border-radius: 5px;
+  padding-left: 1rem;
+  transition: .2s;
+}
+
+.gc-calendar table.calendar a:hover .day-number {
+  color: #fff;
 }
 
 .gc-calendar table.calendar th::before, .gc-calendar table.calendar tr:not(:last-child) td::before {
