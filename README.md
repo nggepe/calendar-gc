@@ -3,6 +3,10 @@
 Welcome to GEPCODE Calendar!
 This is calendar library for web.
 
+**Demo**
+
+<img src="https://github.com/nggepe/calendar-gc/blob/master/docs/Animation.gif" style="max-width: 100%">
+
 # Usage
 
 For now, we provide for **jquery library** first.
