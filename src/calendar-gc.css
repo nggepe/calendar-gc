@@ -3,6 +3,7 @@
 .gc-calendar {
   font-family: 'Inter', sans-serif;
   background-color: #fff;
+  padding: 1rem;
 }
 
 .gc-calendar .gc-calendar-header {
