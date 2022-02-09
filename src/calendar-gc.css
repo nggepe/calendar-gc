@@ -24,12 +24,17 @@
   position: relative;
   display: inline-block;
   border: 0;
-  padding: 10px 15px;
+  padding: 4px 15px;
   font-size: 18px;
   box-shadow: inset 0px -1px 0px #EDF2F7;
   cursor: pointer;
   color: #7A7A9D;
   font-weight: bold;
+  margin-right: 10px;
+}
+
+.gc-calendar .gc-calendar-header button.prev:hover, .gc-calendar .gc-calendar-header button.next:hover {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08), 0px 7px 14px rgba(50, 50, 93, 0.1);
 }
 
 .gc-calendar .gc-calendar-header button.prev {
@@ -62,13 +67,14 @@
 }
 
 .gc-calendar table.calendar td {
-  height: 165px;
+  height: 150px;
   position: relative;
   padding-top: 3px;
   vertical-align: top;
+  width: calc(100% / 7);
 }
 
-.gc-calendar table.calendar td.prev-month, .gc-calendar table.calendar td.next-month {
+.gc-calendar table.calendar td.prev-month .day-number, .gc-calendar table.calendar td.next-month .day-number {
   color: #B5B5BD
 }
 
@@ -77,6 +83,14 @@
   font-weight: 800;
   line-height: 38.09px;
   overflow-y: auto;
+  color: #000000;
+  text-decoration: none;
+  display: block;
+}
+
+.gc-calendar table.calendar a {
+  text-decoration: none;
+  display: block;
 }
 
 .gc-calendar table.calendar th::before, .gc-calendar table.calendar tr:not(:last-child) td::before {
@@ -88,6 +102,12 @@
   background-color: #27272E;
   bottom: 0px;
   position: absolute;
+}
+
+.gc-calendar .gc-event {
+  display: block;
+  width: max-content;
+  margin-bottom: 10px;
 }
 
 .slide-in-left {
