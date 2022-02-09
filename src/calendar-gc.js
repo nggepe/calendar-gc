@@ -5,7 +5,7 @@ var gcObject = {
     monthNames: [],
     onPrevMonth: function (e) { },
     onNextMonth: function (e) { },
-    events: [{ date: null, eventName: null, className: null, onclick: function (ev, data) { }, dateColor: "#000" }],
+    events: [{ date: null, eventName: null, className: null, onclick: function (ev, data) { }, dateColor: "#38385c" }],
     onclickDate: function (ev, data) { },
     nextIcon: '&gt;',
     prevIcon: '&lt;',
@@ -196,7 +196,7 @@ var gcObject = {
       eventName: null,
       className: null,
       onclick: function (ev, data) { },
-      dateColor: "#000"
+      dateColor: "#38385c"
     }]
     gcObject.options.onclickDate = options.onclickDate || function (e, data) { }
     gcObject.options.nextIcon = options.nextIcon || '&gt;'

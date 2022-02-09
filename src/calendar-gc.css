@@ -53,7 +53,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
-  color: #000000;
+  color: #38385c;
   line-height: 136.02%;
   min-width: 220px;
 }
@@ -91,7 +91,7 @@
   font-weight: 800;
   line-height: 38.09px;
   overflow-y: auto;
-  color: #000000;
+  color: #38385c;
   text-decoration: none;
   display: block;
 }
@@ -119,7 +119,7 @@
   width: 90%;
   height: 2px;
   border-radius: 1px;
-  background-color: #27272E;
+  background-color: #8f8f93;
   bottom: 0px;
   position: absolute;
 }
