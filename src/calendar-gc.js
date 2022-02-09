@@ -139,7 +139,7 @@ var gcObject = {
     var cDate = 1;
     for (let i = firstWeek.length; i < dayLength; i++) {
       firstWeek.push({
-        datejs: this.pickedDate,
+        datejs: new Date(this.pickedDate.getFullYear(), this.pickedDate.getMonth(), cDate),
         date: cDate,
         class: "current-month"
       });
