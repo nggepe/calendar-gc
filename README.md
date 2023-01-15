@@ -96,13 +96,15 @@ this option is an array that you can build any events in spesific date.
 ```javascript
 const option = {
   events: [
-    date: new Date("2022-02-07"),
-    eventName: "Holiday",
-    className: "badge bg-danger",
-    onclick(e, data) {
-      console.log(data);
-    },
-    dateColor: "red"
+    {
+      date: new Date("2022-02-07"),
+      eventName: "Holiday",
+      className: "badge bg-danger",
+      onclick(e, data) {
+        console.log(data);
+      },
+      dateColor: "red"
+    }
   ]
 }
 ```
