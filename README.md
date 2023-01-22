@@ -1,7 +1,7 @@
 # GC-Calendar
 
 Welcome to GEPCODE Calendar!
-This is calendar library for web.
+This is a calendar library for the web.
 
 **Demo**
 
@@ -9,8 +9,8 @@ This is calendar library for web.
 
 # Usage
 
-For now, we provide for **jquery library** first.
-**Example:**
+For now, this plugin is dependent on the **jQuery library**.
+**Basic Usage Example:**
 ```javascript
 $("yourElement").calendarGC(options)
 ```
@@ -107,6 +107,35 @@ const option = {
     }
   ]
 }
+```
+
+## Functions
+Allows interaction with an existing calendar object to update the object inline.
+
+### `setDate()`
+Sets the active date and jumps the calendar to the month that contains the selected date.
+```javascript
+# Initialize the calendar object
+let calendar = $("#calendar").calendarGC(options);
+# Set the date and redraw the calendar
+calendar.setDate("2023-01-01");
+```
+
+### `setEvents()`
+Sets the list of events that are displayed on the calendar
+```javascript
+# Initialize the calendar object
+let calendar = $("#calendar").calendarGC(options);
+const events = [
+  {
+    date: new Date(),
+    eventName: "Event #1",
+    className: "badge bg-info",
+    dateColor: "red"
+  }
+];
+# Set the list of events and redraw the calendar
+calendar.setEvents(events);
 ```
 
 # Styling

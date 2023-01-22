@@ -13,6 +13,22 @@ var gcObject = {
   el: "",
   eventAnimate: "none",
   pickedDate: new Date(),
+  setDate(date) {
+      const newDate = new Date(date);
+      if (newDate == this.pickedDate) {
+          return ;
+      } else if (newDate > this.pickedDate) {
+          this.eventAnimate = "next";
+      } else {
+          this.eventAnimate = "prev";
+      }
+      this.pickedDate = newDate;
+      this.render();
+  },
+  setEvents(events) {
+      this.options.events = events;
+      this.render();
+  },
   prevMonth() {
     this.pickedDate = new Date(this.pickedDate.getFullYear(), this.pickedDate.getMonth() - 2, 1);
     this.options.onPrevMonth(this.pickedDate);
