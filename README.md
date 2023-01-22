@@ -10,6 +10,7 @@ This is a calendar library for the web.
 # Usage
 
 For now, this plugin is dependent on the **jQuery library**.
+
 **Basic Usage Example:**
 ```javascript
 $("yourElement").calendarGC(options)
@@ -17,7 +18,8 @@ $("yourElement").calendarGC(options)
 
 # Options
 
-Our options provided for you to customize the calendar esier.
+Our options provided for you to customize the calendar easier.
+
 **Example**
 ```javascript
 const option = {
