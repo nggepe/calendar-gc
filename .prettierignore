@@ -1,0 +1,4 @@
+**/*.lock
+.husky
+node_modules
+.next
