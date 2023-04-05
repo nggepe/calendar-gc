@@ -12,8 +12,9 @@ This is a calendar library for the web.
 For now, this plugin is dependent on the **jQuery library**.
 
 **Basic Usage Example:**
+
 ```javascript
-$("yourElement").calendarGC(options)
+$("yourElement").calendarGC(options);
 ```
 
 # Options
@@ -21,10 +22,11 @@ $("yourElement").calendarGC(options)
 Our options provided for you to customize the calendar easier.
 
 **Example**
+
 ```javascript
 const option = {
-  dayNames: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
-}
+  dayNames: ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+};
 ```
 
 ## dayNames
@@ -32,7 +34,7 @@ const option = {
 You can use `dayNames` to replace your day name. We provide day name default like this.
 
 ```javascript
-['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 ```
 
 if you want to write it as long name, you can replace that.
@@ -43,9 +45,24 @@ You have to write the `dayNames` from **Sunday** until **Saturday**
 ## monthNames
 
 You can use `monthNames` to replace your month name. We provide month name default like this.
+
 ```javascript
-['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+[
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 ```
+
 These will show when the month you picked is on that number of month, so you have to short carefully
 
 ## nextIcon
@@ -61,12 +78,13 @@ this is html that you can use for prev button, the difault is `&lt;`
 is the callback that will call when the prev button pressed.
 
 **Example**
+
 ```javascript
 const option = {
-  onPrevMonth: function(pickedDate){
-    console.log(pickedDate)
-  }
-}
+  onPrevMonth: function (pickedDate) {
+    console.log(pickedDate);
+  },
+};
 ```
 
 ## onNextMonth
@@ -74,12 +92,13 @@ const option = {
 is the callback that will cal when the next button pressed.
 
 **Example**
+
 ```javascript
 const option = {
-  onNextMonth: function(pickedDate){
-    console.log(pickedDate)
-  }
-}
+  onNextMonth: function (pickedDate) {
+    console.log(pickedDate);
+  },
+};
 ```
 
 ## dateBegin
@@ -89,12 +108,12 @@ is the Integer that you can use for the beginning of date.
 ...
 6 is Saturday
 
-
 ## events
 
 this option is an array that you can build any events in spesific date.
 
 **Example**
+
 ```javascript
 const option = {
   events: [
@@ -105,38 +124,43 @@ const option = {
       onclick(e, data) {
         console.log(data);
       },
-      dateColor: "red"
-    }
-  ]
-}
+      dateColor: "red",
+    },
+  ],
+};
 ```
 
 ## Functions
+
 Allows interaction with an existing calendar object to update the object inline.
 
 ### `setDate()`
+
 Sets the active date and jumps the calendar to the month that contains the selected date.
+
 ```javascript
-# Initialize the calendar object
+// Initialize the calendar object
 let calendar = $("#calendar").calendarGC(options);
-# Set the date and redraw the calendar
+// Set the date and redraw the calendar
 calendar.setDate("2023-01-01");
 ```
 
 ### `setEvents()`
+
 Sets the list of events that are displayed on the calendar
+
 ```javascript
-# Initialize the calendar object
+// Initialize the calendar object
 let calendar = $("#calendar").calendarGC(options);
 const events = [
   {
     date: new Date(),
     eventName: "Event #1",
     className: "badge bg-info",
-    dateColor: "red"
-  }
+    dateColor: "red",
+  },
 ];
-# Set the list of events and redraw the calendar
+// Set the list of events and redraw the calendar
 calendar.setEvents(events);
 ```
 
