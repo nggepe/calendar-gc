@@ -246,15 +246,7 @@ var gcObject = {
     ];
     gcObject.options.onPrevMonth = options.onPrevMonth || function (e) {};
     gcObject.options.onNextMonth = options.onNextMonth || function (e) {};
-    gcObject.options.events = options.events || [
-      {
-        date: null,
-        eventName: null,
-        className: null,
-        onclick: function (ev, data) {},
-        dateColor: "#38385c",
-      },
-    ];
+    gcObject.options.events = options.events || [];
     gcObject.options.onclickDate = options.onclickDate || function (e, data) {};
     gcObject.options.nextIcon = options.nextIcon || "&gt;";
     gcObject.options.prevIcon = options.prevIcon || "&lt;";
